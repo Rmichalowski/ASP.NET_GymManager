@@ -1,0 +1,25 @@
+﻿@model string
+<div class="hello_user">@Model, you are in Admin View</div>
+
+<div class="menu">
+    <a class="options_text" asp-area="" asp-controller="Admin" a asp-action="Index">
+        <div class="options">Show all users</div>
+    </a>
+    <a class="options_text" asp-area="" asp-controller="Admin" a asp-action="Create">
+        <div class="options">Create user</div>
+    </a>
+    <a class="options_text" asp-area="" asp-controller="Role" a asp-action="Index">
+        <div class="options">Show all roles</div>
+    </a>
+    <a class="options_text" asp-area="" asp-controller="Role" a asp-action="Create">
+        <div class="options">Create role</div>
+    </a>
+
+
+
+    @if (User?.Identity?.IsAuthenticated ?? false)
+    {
+        <a asp-controller="Account" asp-action="Logout" class="options_text"><div class="options">Logout</div></a>
+    }
+
+</div>

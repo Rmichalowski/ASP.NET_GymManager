@@ -1,0 +1,36 @@
+﻿
+@model IEnumerable<Trainer>
+@{
+    ViewData["Title"] = "Index";
+}
+<a asp-action="Create">Create new Trainer</a>
+<h2>Trainers database:</h2>
+<table style="width:50%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Specialization</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Trainer t in Model)
+        {
+            <tr>
+                <td>@t.Name</td>
+                <td>@t.Specialization</td>
+                <td>@t.Phone</td>
+                <td>@t.Email</td>
+                <td><a asp-action="Update" asp-route-cname="@t.Name">Update</a></td>
+                <td>
+                    <form asp-route-cname="@t.Name" asp-action="Delete" method="post">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

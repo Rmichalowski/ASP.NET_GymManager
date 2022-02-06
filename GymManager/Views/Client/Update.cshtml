@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Client
+@{
+    ViewData["Title"] = "Update";
+}
+<h2>Update</h2>
+<form method="post">
+    <p>
+        <label asp-for="Name">Client's name:</label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </p>
+     <p>
+        <label asp-for="Age">Client's Age:</label>
+        <input asp-for="Age" />
+        <span asp-validation-for="Age"></span>
+    </p>
+     <p>
+        <label asp-for="Phone">Client's Phone:</label>
+        <input asp-for="Phone" />
+        <span asp-validation-for="Phone"></span>
+    </p>
+
+    <p><button type="submit">Submit</button> </p>
+</form>
